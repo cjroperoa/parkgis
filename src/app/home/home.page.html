@@ -1,12 +1,24 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      PARKGIS
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> LOGIN </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-input placeholder="Usuario">  </ion-input>  
+        <ion-input placeholder="Contraseña">  </ion-input>
+      
+      <ion-button (click)="login()" expand="block">Ingresar</ion-button>
+
+    </ion-card-content>
+    <ion-button expand="block">Invitado</ion-button>
+    <ion-button expand="block">Registrese</ion-button>
+  </ion-card>
 </ion-content>
