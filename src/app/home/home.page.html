@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       PARKGIS
     </ion-title>
@@ -8,15 +8,21 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-card-header>
-      <ion-card-title> LOGIN </ion-card-title>
+    <ion-card-header translucent color="primary">
+      <ion-card-title text-center > LOGIN </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-        <ion-input placeholder="Usuario">  </ion-input>  
-        <ion-input placeholder="Contraseña">  </ion-input>
-        <ion-button>Ingresar</ion-button>
+      <div padding>
+        <ion-item>
+          <ion-input  name="name" type="text" placeholder="Nombre" ngModel required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name="email" type="password" placeholder="Contraseña" ngModel required></ion-input>
+        </ion-item>
+      </div>
+        <ion-button size="large" expand="full" href="/editor">Ingresar</ion-button>
     </ion-card-content>
   </ion-card>
-    <ion-button href="/registrar">Registrese</ion-button>
-    <ion-button>Ingresar como Invitado</ion-button>
+    <ion-button href="/registrar" expand="full">Registrese</ion-button>
+    <ion-button href="/invitado" expand="full">Ingresar como Invitado</ion-button>
 </ion-content>
