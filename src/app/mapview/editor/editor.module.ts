@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { EditorPage } from './editor.page';
 
+//Importa AgmCoreModule
+import { AgmCoreModule } from '@agm/core';
+
 const routes: Routes = [
   {
     path: '',
@@ -19,8 +22,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    AgmCoreModule.forRoot(),
     RouterModule.forChild(routes)
   ],
   declarations: [EditorPage]
 })
+
 export class EditorPageModule {}

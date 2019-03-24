@@ -1,9 +1,20 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>editor</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Editor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+
+    <agm-map 
+    [latitude]="lat" 
+    [longitude]="lng"
+    [zoom]="zoom">
+  
+    <agm-marker 
+      [latitude]="lat" 
+      [longitude]="lng">
+    </agm-marker>
+  </agm-map>
 
 </ion-content>
