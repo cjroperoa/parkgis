@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+//cordova-plugin-splashscreen
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  //cordova-plugin-splashscreen
+  constructor(private splashScreen: SplashScreen) { }
+  
 }

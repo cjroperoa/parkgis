@@ -11,9 +11,6 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
   styleUrls: ['./invitado.page.scss'],
 })
 export class InvitadoPage implements OnInit {
-  // lat: number = 4.6369;
-  // lng: number = -74.0794;
-  // zoom: number = 17;
 
   locationCoords: any;
   timetest: any;
@@ -21,8 +18,8 @@ export class InvitadoPage implements OnInit {
   constructor(
     private androidPermissions: AndroidPermissions,
     private geolocation: Geolocation,
-    private locationAccuracy: LocationAccuracy
-  ) { 
+    private locationAccuracy: LocationAccuracy) { 
+
     this.locationCoords = {
       latitude: "",
       longitude: "",
@@ -39,7 +36,8 @@ export class InvitadoPage implements OnInit {
       result => {
         if (result.hasPermission) {
           //Si tiene permiso, muestre el diálogo 'Activar GPS'
-          this.askToTurnOnGPS();
+          //this.askToTurnOnGPS();
+          this.getLocationCoordinates()
         } else {
           //Si no tiene permiso, solicita el permiso
           this.requestGPSPermission();
@@ -65,7 +63,7 @@ export class InvitadoPage implements OnInit {
             },
             error => {
               //Mostrar alerta si el usuario hace clic en "No, gracias"
-              alert('requestPermission Error requesting location permissions ' + error)
+              alert('ERROR al solicitar permisos de ubicación ' + error)
             }
           );
       }
@@ -75,10 +73,10 @@ export class InvitadoPage implements OnInit {
   askToTurnOnGPS() {
     this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(
       () => {
-        // When GPS Turned ON call method to get Accurate location coordinates
+        // Cuando el GPS se activa, llame al método para obtener coordenadas de ubicación precisas
         this.getLocationCoordinates()
       },
-      error => alert('Error requesting location permissions ' + JSON.stringify(error))
+      error => alert('ERROR al solicitar permisos de ubicación ' + JSON.stringify(error))
     );
   }
 // Obtiene coordenadas precisas del dispositivo mediante el GPS
@@ -89,10 +87,9 @@ export class InvitadoPage implements OnInit {
       this.locationCoords.accuracy = resp.coords.accuracy;
       this.locationCoords.timestamp = resp.timestamp;
     }).catch((error) => {
-      alert('Error getting location' + error);
+      alert('ERROR obteniendo la localización' + error);
     });
   }
   
-  ngOnInit() {  
-  }
+  ngOnInit() { }
 }

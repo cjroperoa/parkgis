@@ -12,4 +12,8 @@ export class EditorPage implements OnInit {
   ngOnInit() {
   }
 
+  lat: number = 4.6369;
+  lng: number = -74.0794;
+  zoom: number = 17;
+
 }
