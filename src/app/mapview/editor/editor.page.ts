@@ -7,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditorPage implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   lat: number = 4.6369;
   lng: number = -74.0794;
