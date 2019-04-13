@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { InvitadoPage } from './invitado.page';
 
-//Importa AgmCoreModule
+// importa_AgmCoreModule
 import { AgmCoreModule } from '@agm/core';
 
 const routes: Routes = [
@@ -22,7 +22,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyCaJwVGL0sQxdPnFUpWUjLLal_vxr9R38A'}),
+    AgmCoreModule.forRoot(),
     RouterModule.forChild(routes),
   ],
   declarations: [InvitadoPage]
