@@ -1,0 +1,35 @@
+ion-content{
+  --background: radial-gradient(ellipse at center, hsla(272,52%,24%,0.7) 0%, hsla(272,52%,24%,0.85) 50%, hsla(272,52%,24%,1) 100%);
+  --color: white;
+}
+
+ion-input{
+   --color: white;
+   --border-style: none;
+   --background: transparent;
+}
+
+ion-item{
+  --background: transparent;
+  --border-color: white;
+  --color: white;
+}
+
+ion-icon{
+   color: white;
+   opacity: 0.9;
+}
+
+ion-img{
+  opacity: 0.9;
+  width: 31%;
+  display: block;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+}
+
+ion-grid{
+  margin-top: 30%;
+}

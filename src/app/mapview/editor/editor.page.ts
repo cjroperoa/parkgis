@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class EditorPage implements OnInit {
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
+  lat: number = 4.616228;
+  lng: number = -74.119616;
+  zoom: number = 18;
+  ngOnInit() { }
 }

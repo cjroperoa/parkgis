@@ -1,20 +1,22 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Editor</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content padding>
-
-    <agm-map 
-    [latitude]="lat" 
-    [longitude]="lng"
-    [zoom]="zoom">
-  
-    <agm-marker 
-      [latitude]="lat" 
-      [longitude]="lng">
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <agm-marker [latitude]="lat" [longitude]="lng">
     </agm-marker>
   </agm-map>
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button>
+      <ion-icon name="add-circle-outline" size="large"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="eye" size="large"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="locate" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 
 </ion-content>

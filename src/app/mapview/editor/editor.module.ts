@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { EditorPage } from './editor.page';
 
-//Importa AgmCoreModule
+// importa_AgmCoreModule
 import { AgmCoreModule } from '@agm/core';
 
 const routes: Routes = [

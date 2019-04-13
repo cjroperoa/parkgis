@@ -1,39 +1,58 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>
-      REGISTRESE
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content padding>
 
-<ion-content>
-  <form>
-    <!-- <ion-grid> -->
-      <!-- <ion-row color="primary" > -->
-        <!-- <ion-col align-self-center size-md="6" size-lg="5" size-xs="12"> -->
-          <div text-center>
-            <h3>Cree su cuenta como Editor</h3>
-            <p>Tenga en cuenta que el administrador revisara su solicitud dentro de las 24 horas siguientes al envio de datos</p>
-          </div>
-          <div padding>
-            <ion-item>
-              <ion-input  name="name" type="text" placeholder="Nombre" ngModel required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input name="email" type="email" placeholder="Sucorreo@Email.com" ngModel required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input name="password" type="password" placeholder="Contraseña" ngModel required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input name="confirm" type="password" placeholder="Confirmar Contraseña" ngModel required></ion-input>
-            </ion-item>
-          </div>
-          <div padding>
-            <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">ENVIAR</ion-button>
-          </div>
-        <!-- </ion-col> -->
-      <!-- </ion-row> -->
-    <!-- </ion-grid> -->
-  </form>
+  <ion-buttons start class="ion-float-left">
+    <ion-button>
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-img src="../../assets/logo_white.png"></ion-img>
+
+  <ion-grid>
+    <!-- Text information -->
+    <ion-row>
+      <ion-col size="12">
+        <div class="ion-text-center">
+          Tenga en cuenta se revisará su solicitud y será aprobada dentro de las 24 horas siguientes al registro.
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- Inputs -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-input name="name" type="text" placeholder="Email"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-input name="password" type="password" placeholder="Usuario"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-input name="password" type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-input name="password" type="password" placeholder="Repetir contraseña"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!-- Button: Registrar -->
+    <ion-row>
+      <ion-col size="12"  class="ion-margin-top">
+        <ion-button routerLink="/registrar" shape="round" expand="full">
+          <ion-icon name="person-add"></ion-icon>
+          REGISTRAR
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 </ion-content>
