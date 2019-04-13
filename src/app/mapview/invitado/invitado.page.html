@@ -5,18 +5,28 @@
     </agm-marker>
   </agm-map>
 
-  <ion-toolbar color="primary">
-    <ion-buttons>
-      <ion-menu-button color="secondary"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      <ion-text color="light">
-        <ion-text color="light" class="fw700">INVITADO</ion-text>
-      </ion-text>
-    </ion-title>
-  </ion-toolbar>
-
+  <ion-fab vertical="bottom" horizontal="center" edge slot="fixed">
+      <ion-fab-button color="tertiary" >
+        <ion-icon name="list-box"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar color="primary">
+      <ion-fab vertical="center" horizontal="start" edge>
+        <ion-fab-button color="tertiary">
+          <ion-icon name="help-circle-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <ion-fab vertical="center" horizontal="end" edge>
+        <ion-fab-button color="tertiary">
+          <ion-icon name="locate"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-toolbar>
+  </ion-footer>
 
 
 

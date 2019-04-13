@@ -22,9 +22,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyB2g5cFRZ6Cr6ozLb9hv6kow_Id066HQmo'
-    }),
+    AgmCoreModule.forRoot(),
     RouterModule.forChild(routes)
   ],
   declarations: [EditorPage]

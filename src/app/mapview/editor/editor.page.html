@@ -5,18 +5,39 @@
     </agm-marker>
   </agm-map>
 
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-button>
-      <ion-icon name="add-circle-outline" size="large"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon name="eye" size="large"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon name="locate" size="large"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+  <ion-fab vertical="center" horizontal="start" edge>
+    <ion-fab-button slot="start" size="small">info</ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="center" horizontal="start" >
+    <ion-fab-button size="small">agrObjeto</ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="start" edge>
+    <ion-fab-button size="small">modObjeto</ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="start" >
+    <ion-fab-button size="small">delObjeto</ion-fab-button>
+  </ion-fab>
+
+<!-- botton_consultarParques -->
+<ion-fab vertical="bottom" horizontal="center" edge slot="fixed">
+  <ion-fab-button color="tertiary" >
+    <ion-icon name="list-box"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-fab vertical="center" horizontal="start" edge>
+      <ion-fab-button color="tertiary">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-fab vertical="center" horizontal="end" edge>
+      <ion-fab-button color="tertiary">
+        <ion-icon name="locate"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-toolbar>
+</ion-footer>
