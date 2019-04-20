@@ -1,10 +1,10 @@
 # PARKGIS
-App de gestión de información de ubicación geográfica y mobiliario urbano de parques [Android].
+App [Android] => gestión de información ubicación geográfica y mobiliario urbano de parques.
 
-- Ionic 4 - 
+<strong>Ionic 4</strong>  
 
 Instalar dependencias
-npm install
+> `npm install`
 
 Test app navegador
-ionic serve --local
+> `ionic serve --local`
