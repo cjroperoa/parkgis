@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class InvitadoPage {
 
-  lat: number = 4.6369;
-  lng: number = -74.0794;
-  zoom: number = 17;
   constructor() { }
+  lat = 4.6369;
+  lng = -74.0794;
+  zoom = 16;
 }

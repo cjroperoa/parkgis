@@ -22,7 +22,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgmCoreModule.forRoot(),
+    AgmCoreModule,
     RouterModule.forChild(routes),
   ],
   declarations: [InvitadoPage]
