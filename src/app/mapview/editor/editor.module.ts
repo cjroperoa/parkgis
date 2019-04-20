@@ -22,10 +22,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgmCoreModule.forRoot(),
+    AgmCoreModule,
     RouterModule.forChild(routes)
   ],
   declarations: [EditorPage]
 })
-
 export class EditorPageModule {}
