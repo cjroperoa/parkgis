@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'registrar', loadChildren: './auth/registrar/registrar.module#RegistrarPageModule' },
-  { path: 'invitado', loadChildren: './mapview/invitado/invitado.module#InvitadoPageModule' },
-  { path: 'editor', loadChildren: './mapview/editor/editor.module#EditorPageModule' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
+  { path: 'registry', loadChildren: './pages/registry/registry.module#RegistryPageModule' },
+  { path: 'guest-view', loadChildren: './pages/guest-view/guest-view.module#GuestViewPageModule' },
+  { path: 'editor-view', loadChildren: './pages/editor-view/editor-view.module#EditorViewPageModule' },
+
 ];
 
 @NgModule({
