@@ -1,0 +1,47 @@
+<ion-content>
+
+  <!--  button Create park -->
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button color="primary" size="small">
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!--  button Log Out -->
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" size="small">
+      <ion-icon name="close"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Map -->
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <agm-marker [latitude]="lat" [longitude]="lng">
+    </agm-marker>
+  </agm-map>
+
+  <!--  button Create park -->
+  <ion-fab vertical="bottom" horizontal="center" edge slot="fixed">
+
+    <ion-fab-button color="tertiary" (click)="alertCreatePark()">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <!--  button Query parks avaliable -->
+    <ion-fab vertical="center" horizontal="start" edge>
+      <ion-fab-button color="tertiary" size="small">
+        <ion-icon name="barcode"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <!--  button Locate -->
+    <ion-fab vertical="center" horizontal="end" edge>
+      <ion-fab-button color="tertiary" size="small">
+        <ion-icon name="locate"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-toolbar>
+</ion-footer>
