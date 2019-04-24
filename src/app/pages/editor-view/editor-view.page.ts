@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AlertController} from '@ionic/angular';
-import {ActionSheetController} from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
+import { ActionSheetController } from '@ionic/angular';
+import { LocationModel } from '../models/location.model';
 
 @Component({
   selector: 'app-editor-view',
@@ -10,16 +11,17 @@ import {ActionSheetController} from '@ionic/angular';
 })
 export class EditorViewPage implements OnInit {
 
+  //location: LocationModel[] = [];
+
   constructor(
     public alertController: AlertController,
-    public actionSheetController: ActionSheetController
-    ) { }
+    public actionSheetController: ActionSheetController,
+    private locationmodel: LocationModel
+  ) { }
 
-  lat = 4.616228;
-  lng = -74.119616;
-  zoom = 16;
+  // ubicacion2: LocationModel[] = [];
 
-  // nombre nuevo parque
+  // [alert]nombreNuevoParque
   async alertCreatePark() {
     const alert = await this.alertController.create({
       header: 'Creando nuevo parque',
@@ -50,7 +52,7 @@ export class EditorViewPage implements OnInit {
 
     await alert.present();
   }
-  // modo de captura del poligono (Parque)
+  // [actionSheet] modocapturaParque
   async actionSheetModeCapture() {
     const actionSheet = await this.actionSheetController.create({
       header: 'Modo',
@@ -77,6 +79,37 @@ export class EditorViewPage implements OnInit {
     });
     await actionSheet.present();
   }
+  // obteniendoPosiciónMapa
+  // getlocation() {
+  //   this.geolocation.getCurrentPosition().then((resp) => {
+
+  //   }).catch((error) => {
+  //     console.log('Error getting location', error);
+  //   });
+  // }
+
+  // cargaPunto() {
+  //   // tomar punto
+  //   let l: number = 4.616230;
+  //   let h: number = -74.119620;
+
+  //   for(let i = 0; i < 10; i++) {
+  //     l = l + 0.000090;
+  //     h = h + 0.000090;
+  //     let pos: LocationModel = {lat: l, lng: h};
+  //     console.log(pos);
+  //     this.ubicacion.push(pos);
+  //   }
+  //   console.log(this.ubicacion.length + 'dce');
+  //   this.cargarPuntodos();
+  // }
+
+  // cargarPuntodos(){
+  //   let l:number = 4.616200;
+  //   let h:number = -74.119590;
+  //   let pos: LocationModel = {lat: l, lng: h};
+  //   this.ubicacion2.push(pos);
+  // }
 
   ngOnInit() {
   }
