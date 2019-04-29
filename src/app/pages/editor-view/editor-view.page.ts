@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
 import { LocationModel } from '../models/location.model';
+import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 
 @Component({
   selector: 'app-editor-view',
@@ -11,15 +12,34 @@ import { LocationModel } from '../models/location.model';
 })
 export class EditorViewPage implements OnInit {
 
-  //location: LocationModel[] = [];
-
   constructor(
     public alertController: AlertController,
     public actionSheetController: ActionSheetController,
-    private locationmodel: LocationModel
-  ) { }
+    public locationmodel: LocationModel,
+    private geolocation: Geolocation
+    ) { }
 
-  // ubicacion2: LocationModel[] = [];
+  pos: LocationModel;
+  lat: number;
+  lng: number;
+  zoom = 30;
+  labelOptions = {
+    color: 'primary',
+    fontFamily: '',
+    fontSize: '10px',
+    fontWeight: 'bold',
+    letterSpacing: '0.5px',
+    text: 'Plan Pagado/No pagado'
+  };
+  iconMap = {
+    iconUrl: 'https://image.flaticon.com/icons/svg/179/179759.svg',
+    iconHeigh: 50
+  };
+
+
+  ngAfterViewInit() {
+    this.getGeolocation();
+  }
 
   // [alert]nombreNuevoParque
   async alertCreatePark() {
@@ -80,13 +100,16 @@ export class EditorViewPage implements OnInit {
     await actionSheet.present();
   }
   // obteniendoPosiciónMapa
-  // getlocation() {
-  //   this.geolocation.getCurrentPosition().then((resp) => {
-
-  //   }).catch((error) => {
-  //     console.log('Error getting location', error);
-  //   });
-  // }
+  getGeolocation() {
+    this.geolocation.getCurrentPosition().then((geoposition: Geoposition) => {
+      this.pos = {lat: geoposition.coords.latitude, lng: geoposition.coords.longitude};
+      this.lat = this.pos.lat;
+      this.lng = this.pos.lng;
+      console.log(this.pos);
+    }).catch((error) => {
+      console.log('Error obteniendo posicion', error);
+    });
+  }
 
   // cargaPunto() {
   //   // tomar punto
