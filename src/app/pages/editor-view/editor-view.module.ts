@@ -21,7 +21,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgmCoreModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC9PnuRk42kbCPMOvsfHpn40r5SoyN38zI',
+      libraries: ['places', 'drawing', 'geometry']
+    }),
     RouterModule.forChild(routes)
   ],
   declarations: [EditorViewPage]

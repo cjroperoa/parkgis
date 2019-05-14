@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LocationModel } from '../app/pages/models/location.model';
 
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 
 
 @NgModule({
@@ -27,6 +27,7 @@ import { AgmCoreModule } from '@agm/core';
     StatusBar,
     SplashScreen,
     Geolocation,
+    GoogleMapsAPIWrapper,
     LocationModel,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

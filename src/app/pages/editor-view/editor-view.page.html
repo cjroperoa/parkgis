@@ -15,15 +15,25 @@
 
   <!-- Map -->
   <agm-map 
-    [latitude]="lat" 
-    [longitude]="lng" 
-    [zoom]="zoom">
-     <agm-marker 
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [streetViewControl]=false
+    [gestureHandling]="none">
+    <agm-marker 
       [latitude]="lat" 
       [longitude]="lng"
-      [label]="labelOptions"
-      [iconUrl]="iconMap.iconUrl">
+      [iconUrl]="iconMap.iconUrl"
+      [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)"
+      >
     </agm-marker>
+    <agm-polygon
+      [paths]="paths"
+      [fillColor]="fillcolor"
+      [fillOpacity]=0.9
+      [polyDraggable]=true
+    ></agm-polygon>
   </agm-map>
 
   <!--  button Create park -->

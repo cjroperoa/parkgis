@@ -1,9 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 
 import { AlertController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
-import { LocationModel } from '../models/location.model';
+
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
+import { GoogleMapsAPIWrapper, LatLngLiteral, MouseEvent } from '@agm/core';
+
+import { LocationModel } from '../models/location.model';
+import { Polygon } from '@agm/core/services/google-maps-types';
+import { AgmPolygon } from '@agm/core/directives/polygon';
+
 
 @Component({
   selector: 'app-editor-view',
@@ -16,30 +22,26 @@ export class EditorViewPage implements OnInit {
     public alertController: AlertController,
     public actionSheetController: ActionSheetController,
     public locationmodel: LocationModel,
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    public loader: GoogleMapsAPIWrapper,
+    public zone: NgZone
     ) { }
 
   pos: LocationModel;
   lat: number;
   lng: number;
-  zoom = 30;
-  labelOptions = {
-    color: 'primary',
-    fontFamily: '',
-    fontSize: '10px',
-    fontWeight: 'bold',
-    letterSpacing: '0.5px',
-    text: 'Plan Pagado/No pagado'
-  };
+  zoom = 17;
+  fillcolor = '';
   iconMap = {
-    iconUrl: 'https://image.flaticon.com/icons/svg/179/179759.svg',
-    iconHeigh: 50
+    iconUrl: '../../../assets/gps.png',
+    iconHeigh: 10
   };
-
-
-  ngAfterViewInit() {
-    this.getGeolocation();
-  }
+  paths: Array<LatLngLiteral> = [
+    { lat: 4.617380676063883, lng: -74.11626798904803 },
+    { lat: 4.617096164611133, lng: -74.1159462327023 },
+    { lat: 4.618121507229103, lng: -74.1150356408674 },
+    { lat: 4.618482231079798, lng: -74.11530208570991 }
+  ];
 
   // [alert]nombreNuevoParque
   async alertCreatePark() {
@@ -110,6 +112,13 @@ export class EditorViewPage implements OnInit {
       console.log('Error obteniendo posicion', error);
     });
   }
+  // getPotition move marker
+  markerDragEnd($event: MouseEvent) {
+    console.log($event);
+    this.pos.lat = $event.coords.lat;
+    this.pos.lng = $event.coords.lng;
+    console.log(this.pos);
+  }
 
   // cargaPunto() {
   //   // tomar punto
@@ -135,6 +144,7 @@ export class EditorViewPage implements OnInit {
   // }
 
   ngOnInit() {
+    this.getGeolocation();
   }
 
 }
