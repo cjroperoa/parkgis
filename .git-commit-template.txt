@@ -1,0 +1,21 @@
+﻿()
+# Type_commit [feat | fix | docs]
+# Title_commit [Max 50 char - Capitalize]
+# Example: (feat) Initial commit
+# -----------------------------------------
+=>
+# <BODY>
+# Why is this change being made? : ¿por qué se está haciendo este cambio? [Max 72 char]
+# ------------------------------------------
+@
+# <FOOTER>
+# @tagname_User
+# ------------------------------------------
+# --------------- COMMIT END ---------------
+
+# ---------------- (Type) ------------------
+#   feat  (nueva caracteristica : new feature)
+#   fix   (arreglando fallos : bug fix)
+#   docs  (documentación : changes to documentation)
+# ------------------------------------------
+# ---------| By: @cjropero | 2019 |---------
