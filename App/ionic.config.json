@@ -1,0 +1,7 @@
+{
+  "name": "PARKGIS",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
